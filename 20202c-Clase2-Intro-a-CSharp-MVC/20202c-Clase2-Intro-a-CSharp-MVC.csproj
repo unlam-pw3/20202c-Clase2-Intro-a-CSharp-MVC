@@ -115,6 +115,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\20202c-Clase2-Intro-a-CSharp-MVC.Ejercicios\20202c-Clase2-Intro-a-CSharp-MVC.Ejercicios.csproj">
+      <Project>{CE63A6D5-BD26-4D57-95EE-2DA15A0F57F9}</Project>
+      <Name>20202c-Clase2-Intro-a-CSharp-MVC.Ejercicios</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
