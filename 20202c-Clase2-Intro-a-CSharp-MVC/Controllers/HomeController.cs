@@ -45,5 +45,20 @@ namespace _20202c_Clase2_Intro_a_CSharp_MVC.Controllers
 
             return View();
         }
+
+        public ActionResult EjercicioRef()
+        {
+            //string textoOriginal = "Bella Y Bestia";
+            //string textoInvertido = Ejercicios.EjercicioOut.InvertirTexto(textoOriginal);
+
+            string textoOriginal = "Bella Y Bestia";
+            string textoFinal = textoOriginal;
+            Ejercicios.EjercicioRef.TruncarTexto(ref textoFinal, 4);
+
+            ViewBag.TextoOriginal = textoOriginal;
+            ViewBag.TextoInvertido = textoFinal;
+
+            return View();
+        }
     }
 }
