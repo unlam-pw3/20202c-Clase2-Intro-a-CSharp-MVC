@@ -1,4 +1,5 @@
 ﻿using _20202c_Clase2_Intro_a_CSharp_MVC.Ejercicios;
+using _20202c_Clase2_Intro_a_CSharp_MVC.Ejercicios.EjercicioGenerics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace _20202c_Clase2_Intro_a_CSharp_MVC.Controllers
         {
             return View();
         }
-       
+
         public ActionResult DiasDeLaSemana()
         {
             //Enunciado
@@ -57,6 +58,27 @@ namespace _20202c_Clase2_Intro_a_CSharp_MVC.Controllers
 
             ViewBag.TextoOriginal = textoOriginal;
             ViewBag.TextoInvertido = textoFinal;
+
+            return View();
+        }
+
+
+        public ActionResult EjercicioGenerics()
+        {
+            //string textoOriginal = "Bella Y Bestia";
+            //string textoInvertido = Ejercicios.EjercicioOut.InvertirTexto(textoOriginal);
+
+            EjemploGenerics<ISaludar> ejemploGenerics = new EjemploGenerics<ISaludar>();
+
+            List<ISaludar> animalesQueSaludan = new List<ISaludar>();
+            animalesQueSaludan.Add(new Perro() { Nombre = "Firulais" });
+            animalesQueSaludan.Add(new Pez() { Nombre = "Nemo" });
+            animalesQueSaludan.Add(new Grillo() { Nombre = "Pepe" });
+            animalesQueSaludan.Add(new Cerdo() { Nombre = "Orson" } );
+
+            string saludoGrupal = ejemploGenerics.SaludarTodos(animalesQueSaludan);
+
+            ViewBag.SaludoGrupal = saludoGrupal;
 
             return View();
         }
